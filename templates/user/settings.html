@@ -1,0 +1,130 @@
+{% extends "base_dashboard.html" %}
+
+{% block title %}Settings{% endblock %}
+
+{% block page_title %}Settings{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Account Settings</h5>
+                <form method="POST" action="{{ url_for('user.settings') }}">
+                    <div class="mb-4">
+                        <h6>Email Notifications</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="emailUpdates" name="email_updates" 
+                                   {% if settings.email_updates %}checked{% endif %}>
+                            <label class="form-check-label" for="emailUpdates">
+                                Receive email updates about your account
+                            </label>
+                        </div>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="emailNewsletter" name="email_newsletter"
+                                   {% if settings.email_newsletter %}checked{% endif %}>
+                            <label class="form-check-label" for="emailNewsletter">
+                                Subscribe to newsletter
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="emailMarketing" name="email_marketing"
+                                   {% if settings.email_marketing %}checked{% endif %}>
+                            <label class="form-check-label" for="emailMarketing">
+                                Receive marketing emails
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6>Skill Recommendations</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="skillRecommendations" name="skill_recommendations"
+                                   {% if settings.skill_recommendations %}checked{% endif %}>
+                            <label class="form-check-label" for="skillRecommendations">
+                                Receive skill recommendations
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="careerSuggestions" name="career_suggestions"
+                                   {% if settings.career_suggestions %}checked{% endif %}>
+                            <label class="form-check-label" for="careerSuggestions">
+                                Receive career suggestions
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h6>Privacy Settings</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="profileVisibility" name="profile_visibility"
+                                   {% if settings.profile_visibility %}checked{% endif %}>
+                            <label class="form-check-label" for="profileVisibility">
+                                Make profile visible to other users
+                            </label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="showSkills" name="show_skills"
+                                   {% if settings.show_skills %}checked{% endif %}>
+                            <label class="form-check-label" for="showSkills">
+                                Show skills on profile
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Danger Zone</h5>
+                <div class="mb-3">
+                    <h6>Delete Account</h6>
+                    <p class="text-muted small">Once you delete your account, there is no going back. Please be certain.</p>
+                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                        Delete Account
+                    </button>
+                </div>
+                <div>
+                    <h6>Export Data</h6>
+                    <p class="text-muted small">Download all your data in a JSON file.</p>
+                    <a href="{{ url_for('user.export_data') }}" class="btn btn-outline-primary">
+                        Export Data
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Account Modal -->
+<div class="modal fade" id="deleteAccountModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-danger">Warning: This action cannot be undone.</p>
+                <p>Please type your password to confirm account deletion:</p>
+                <form method="POST" action="{{ url_for('user.delete_account') }}">
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" required
+                               placeholder="Enter your password">
+                    </div>
+                    <div class="text-end">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-danger">Delete Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

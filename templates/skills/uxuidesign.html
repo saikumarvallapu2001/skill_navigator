@@ -1,0 +1,380 @@
+{% extends "base.html" %}
+
+{% block title %}UX/UI Design - Skill Navigator{% endblock %}
+
+{% block extra_css %}
+<style>
+    .header-section {
+        background-color: #f8f9fa;
+        padding: 40px 0;
+        margin-bottom: 30px;
+    }
+    .header-section img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media (max-width: 768px) {
+        .header-section {
+            padding: 30px 0;
+        }
+        .header-section h1 {
+            font-size: 2.2rem;
+        }
+        .content-section {
+            padding: 40px 0;
+        }
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+        }
+    }
+    .content-section {
+        padding: 60px 0;
+    }
+    .tech-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    .roadmap-item {
+        border-left: 3px solid #3498db;
+        padding-left: 20px;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .roadmap-item:before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #3498db;
+        left: -9px;
+        top: 5px;
+    }
+    @media (max-width: 576px) {
+        .roadmap-item h4 {
+            font-size: 1.2rem;
+        }
+        .roadmap-item {
+            padding-left: 15px;
+        }
+        .roadmap-item:before {
+            width: 12px;
+            height: 12px;
+            left: -7.5px;
+        }
+    }
+    .design-card {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+        height: 100%;
+    }
+    .design-card:hover {
+        transform: translateY(-5px);
+    }
+    .stat-card {
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #3498db;
+        margin-bottom: 10px;
+    }
+    .tool-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #e9ecef;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    .principle-item {
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border-left: 4px solid #3498db;
+        background-color: #f8f9fa;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="header-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">UX/UI Design</h1>
+                <p class="lead mb-4">Create beautiful, functional interfaces that provide excellent user experiences through research, design thinking, and visual aesthetics.</p>
+                <div class="d-flex gap-3">
+                    <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                    <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="UX/UI Design" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- UX vs UI Section -->
+<section class="content-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Understanding UX vs UI Design</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="design-card h-100">
+                    <h4 class="mb-3">User Experience (UX) Design</h4>
+                    <p>Focuses on the overall feel of the product and user journey.</p>
+                    <hr>
+                    <h5>Key Responsibilities:</h5>
+                    <ul>
+                        <li>User research and creating personas</li>
+                        <li>Information architecture</li>
+                        <li>Wireframing and prototyping</li>
+                        <li>Usability testing</li>
+                        <li>Analyzing user behavior and feedback</li>
+                    </ul>
+                    <p class="mt-3"><strong>Goal:</strong> Create products that are useful, usable, and enjoyable for users.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="design-card h-100">
+                    <h4 class="mb-3">User Interface (UI) Design</h4>
+                    <p>Focuses on the visual elements and interactive components.</p>
+                    <hr>
+                    <h5>Key Responsibilities:</h5>
+                    <ul>
+                        <li>Visual design and aesthetics</li>
+                        <li>Color theory and typography</li>
+                        <li>Design systems and component libraries</li>
+                        <li>Interactive elements and animations</li>
+                        <li>Visual hierarchy and layout</li>
+                    </ul>
+                    <p class="mt-3"><strong>Goal:</strong> Create visually appealing interfaces that guide users intuitively.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-8 mx-auto">
+                <p class="lead text-center">While UX and UI are distinct disciplines, they work together to create products that are both functional and beautiful. Great designers understand both aspects and how they complement each other.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Design Principles Section -->
+<section class="content-section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Key Design Principles</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="principle-item">
+                    <h4>1. User-Centered Design</h4>
+                    <p>Design with the user's needs, goals, and preferences in mind. Understand who your users are and what problems they're trying to solve.</p>
+                </div>
+                <div class="principle-item">
+                    <h4>2. Hierarchy and Organization</h4>
+                    <p>Create clear visual hierarchies that guide users through content. Organize information in logical, intuitive ways.</p>
+                </div>
+                <div class="principle-item">
+                    <h4>3. Consistency</h4>
+                    <p>Maintain consistent patterns, components, and behaviors throughout the interface to reduce cognitive load and improve learnability.</p>
+                </div>
+                <div class="principle-item">
+                    <h4>4. Feedback and Affordances</h4>
+                    <p>Provide clear feedback for user actions and make interactive elements easily recognizable through proper affordances.</p>
+                </div>
+                <div class="principle-item">
+                    <h4>5. Accessibility</h4>
+                    <p>Design for users of all abilities, ensuring interfaces can be used by people with various disabilities or limitations.</p>
+                </div>
+                <div class="principle-item">
+                    <h4>6. Simplicity</h4>
+                    <p>Eliminate unnecessary complexity. Focus on what's essential and remove everything that doesn't serve a clear purpose.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Essential Tools Section -->
+<section class="content-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Essential UX/UI Design Tools</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">Design & Prototyping</h4>
+                        <div class="mb-3">
+                            <span class="tool-badge">Figma</span>
+                            <span class="tool-badge">Adobe XD</span>
+                            <span class="tool-badge">Sketch</span>
+                            <span class="tool-badge">InVision</span>
+                            <span class="tool-badge">Framer</span>
+                            <span class="tool-badge">Axure RP</span>
+                        </div>
+                        <p>These tools allow designers to create wireframes, mockups, and interactive prototypes. Figma has become the industry standard due to its collaborative features and web-based platform.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">User Research</h4>
+                        <div class="mb-3">
+                            <span class="tool-badge">UserTesting</span>
+                            <span class="tool-badge">Lookback</span>
+                            <span class="tool-badge">Hotjar</span>
+                            <span class="tool-badge">Optimal Workshop</span>
+                            <span class="tool-badge">Maze</span>
+                            <span class="tool-badge">SurveyMonkey</span>
+                        </div>
+                        <p>Tools for conducting user research, usability testing, and gathering user feedback to inform design decisions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">Design Systems</h4>
+                        <div class="mb-3">
+                            <span class="tool-badge">Storybook</span>
+                            <span class="tool-badge">Zeroheight</span>
+                            <span class="tool-badge">Figma Libraries</span>
+                            <span class="tool-badge">Sketch Libraries</span>
+                            <span class="tool-badge">Material Design</span>
+                            <span class="tool-badge">Fluent Design</span>
+                        </div>
+                        <p>Tools and platforms for creating and maintaining design systems, component libraries, and style guides.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Roadmap Section -->
+<section id="roadmap" class="content-section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">UX/UI Design Learning Roadmap</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="roadmap-item">
+                    <h4>1. Design Fundamentals</h4>
+                    <p>Learn basic design principles, color theory, typography, and visual hierarchy.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>2. User Research</h4>
+                    <p>Master user research methods, persona creation, and user journey mapping.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>3. Information Architecture</h4>
+                    <p>Understand how to organize and structure information effectively.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>4. Wireframing & Prototyping</h4>
+                    <p>Learn to create wireframes and interactive prototypes using industry tools.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>5. Visual Design</h4>
+                    <p>Develop skills in creating visually appealing interfaces with proper aesthetics.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>6. Usability Testing</h4>
+                    <p>Learn how to conduct and analyze usability tests to improve designs.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>7. Design Systems</h4>
+                    <p>Master the creation and maintenance of design systems and component libraries.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>8. Specialization</h4>
+                    <p>Focus on specific areas like mobile design, web design, or enterprise applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources" class="content-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Learning Resources</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">Online Courses</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Google UX Design Professional Certificate</li>
+                            <li class="mb-2">Interaction Design Foundation Courses</li>
+                            <li class="mb-2">Udemy UX/UI Design Bootcamp</li>
+                            <li class="mb-2">Coursera UI/UX Design Specialization</li>
+                            <li class="mb-2">Skillshare Design Classes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">Books</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Don't Make Me Think (Steve Krug)</li>
+                            <li class="mb-2">The Design of Everyday Things</li>
+                            <li class="mb-2">About Face: The Essentials of Interaction Design</li>
+                            <li class="mb-2">Designing for the Digital Age</li>
+                            <li class="mb-2">Universal Principles of Design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title">Communities & Practice</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Dribbble - Design Inspiration</li>
+                            <li class="mb-2">Behance - Portfolio Platform</li>
+                            <li class="mb-2">UX Stack Exchange</li>
+                            <li class="mb-2">Designer News</li>
+                            <li class="mb-2">Local UX Meetups</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Ready to Start Your UX/UI Design Journey?</h2>
+                <p class="lead mb-5">Take the first step towards becoming a professional designer today.</p>
+                <a href="{{ url_for('main.discover_skills') }}" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

@@ -1,0 +1,97 @@
+{% extends "base_dashboard.html" %}
+
+{% block title %}Dashboard - SkillNavigator{% endblock %}
+
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container-fluid py-4">
+    <!-- Welcome Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h2 class="mb-1">Welcome back, {{ current_user.full_name if current_user.full_name else current_user.username }}!</h2>
+                            <p class="mb-0 opacity-75">Track your progress and continue your learning journey</p>
+                        </div>
+                        <div class="text-end">
+                            <h3 class="mb-0">{{ current_user.education|title if current_user.education else 'Student' }}</h3>
+                            <small class="opacity-75">Member since {{ current_user.created_at.strftime('%B %Y') }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+        <!-- Removed Statistics Cards -->
+    </div>
+
+    <!-- AI Chatbot Card with Image -->
+    <div class="row mb-4">
+        <div class="col-xl-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">AI Chatbot</h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img src="{{ url_for('static', filename='images/ai_chatbot.png') }}" alt="AI Chatbot" class="img-fluid" style="max-width: 200px;">
+                    </div>
+                    <p>Welcome to the AI Chatbot! Ask me anything about your skills or learning journey.</p>
+                    <a href="{{ url_for('user.ai_chatbot') }}" class="btn btn-primary">Go to AI Chatbot</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="row">
+        <!-- Left Column - Recent Activity -->
+        <div class="col-xl-8 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Recent Activity</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        <!-- Removed Recent Activity -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Skill Progress -->
+        <div class="col-xl-4 mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Skill Progress</h5>
+                </div>
+                <div class="card-body">
+                    <!-- Removed Skill Progress -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card {
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.progress {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.progress-bar {
+    border-radius: 10px;
+}
+</style>
+{% endblock %}

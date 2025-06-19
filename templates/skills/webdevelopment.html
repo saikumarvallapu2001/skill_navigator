@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block title %}Web Development - Skill Navigator{% endblock %}
+
+{% block extra_css %}
+<style>
+    .header-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        margin-bottom: 30px;
+    }
+    .content-section {
+        padding: 60px 0;
+    }
+    .tech-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    .roadmap-item {
+        border-left: 3px solid #3498db;
+        padding-left: 20px;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .roadmap-item:before {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #3498db;
+        left: -9px;
+        top: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Header Section -->
+<section class="header-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Web Development</h1>
+                <p class="lead mb-4">Learn to build responsive websites and web applications using modern technologies that power the internet.</p>
+                <div class="d-flex gap-3">
+                    <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                    <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Web Development" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technologies Section -->
+<section class="content-section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Core Technologies</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="p-3 h-100 bg-white rounded shadow-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1051/1051277.png" alt="HTML5" class="tech-icon">
+                    <h4 class="fs-5">HTML5</h4>
+                    <p>The structure of web pages</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 h-100 bg-white rounded shadow-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3" class="tech-icon">
+                    <h4 class="fs-5">CSS3</h4>
+                    <p>Styling and layout</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 h-100 bg-white rounded shadow-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" class="tech-icon">
+                    <h4 class="fs-5">JavaScript</h4>
+                    <p>Dynamic behavior and interactivity</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="p-3 h-100 bg-white rounded shadow-sm">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python/PHP" class="tech-icon">
+                    <h4 class="fs-5">Backend</h4>
+                    <p>Server-side logic and databases</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Roadmap Section -->
+<section id="roadmap" class="content-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Learning Roadmap</h2>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="roadmap-item">
+                    <h4>1. Web Fundamentals</h4>
+                    <p>Start with HTML and CSS basics. Learn how to structure content and style web pages.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>2. JavaScript Essentials</h4>
+                    <p>Learn JavaScript fundamentals, DOM manipulation, and basic interactivity.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>3. Responsive Design</h4>
+                    <p>Master media queries, flexbox, grid, and mobile-first approach for responsive layouts.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>4. Frontend Frameworks</h4>
+                    <p>Learn a popular framework like React, Vue, or Angular to build modern UIs.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>5. Backend Development</h4>
+                    <p>Explore server-side programming with technologies like Django, Flask, or Node.js.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>6. Databases</h4>
+                    <p>Learn SQL, NoSQL databases, and how to integrate them into your applications.</p>
+                </div>
+                <div class="roadmap-item">
+                    <h4>7. Deployment & DevOps</h4>
+                    <p>Discover how to deploy applications and manage development workflows.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resources Section -->
+<section id="resources" class="content-section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4 mb-md-5">Learning Resources</h2>
+        <div class="row g-3 g-md-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title fs-5 fs-md-4">Free Online Courses</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">freeCodeCamp - Web Development</li>
+                            <li class="mb-2">MDN Web Docs</li>
+                            <li class="mb-2">The Odin Project</li>
+                            <li class="mb-2">W3Schools</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title fs-5 fs-md-4">Books</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">HTML & CSS: Design and Build Websites</li>
+                            <li class="mb-2">JavaScript: The Good Parts</li>
+                            <li class="mb-2">Eloquent JavaScript</li>
+                            <li class="mb-2">You Don't Know JS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title fs-5 fs-md-4">YouTube Channels</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">Traversy Media</li>
+                            <li class="mb-2">Web Dev Simplified</li>
+                            <li class="mb-2">The Net Ninja</li>
+                            <li class="mb-2">Academind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-4">Ready to Start Your Web Development Journey?</h2>
+                <p class="lead mb-5">Take the first step towards becoming a professional web developer today.</p>
+                <a href="{{ url_for('main.discover_skills') }}" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

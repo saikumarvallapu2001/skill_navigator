@@ -1,0 +1,245 @@
+{% extends "base_dashboard.html" %}
+
+{% block title %}College Search{% endblock %}
+
+{% block page_title %}Find Colleges{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Filters Sidebar -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Filters</h5>
+                </div>
+                <div class="card-body">
+                    <form method="GET" action="{{ url_for('user.user_search_colleges') }}">
+                        <!-- State Filter -->
+                        <div class="mb-3">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state" name="state">
+                                <option value="">All States</option>
+                                {% for state in states %}
+                                <option value="{{ state }}" {% if state == selected_state %}selected{% endif %}>{{ state }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- District Filter -->
+                        <div class="mb-3">
+                            <label for="district" class="form-label">District</label>
+                            <select class="form-select" id="district" name="district" {% if not selected_state %}disabled{% endif %}>
+                                <option value="">All Districts</option>
+                                {% for district in districts %}
+                                <option value="{{ district }}" {% if district == selected_district %}selected{% endif %}>{{ district }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Stream Filter -->
+                        <div class="mb-3">
+                            <label for="stream" class="form-label">Stream</label>
+                            <select class="form-select" id="stream" name="stream">
+                                <option value="">All Streams</option>
+                                {% for stream in streams %}
+                                <option value="{{ stream }}" {% if stream == selected_stream %}selected{% endif %}>{{ stream }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- College Type Filter -->
+                        <div class="mb-3">
+                            <label for="college_type" class="form-label">College Type</label>
+                            <select class="form-select" id="college_type" name="college_type">
+                                <option value="">All Types</option>
+                                {% for type in college_types %}
+                                <option value="{{ type }}" {% if type == selected_type %}selected{% endif %}>{{ type }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Search Results</h5>
+                </div>
+                <div class="card-body">
+                    {% if colleges %}
+                    <!-- Desktop Table View -->
+                    <div class="table-responsive d-none d-md-block">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>College Name</th>
+                                    <th>State</th>
+                                    <th>District</th>
+                                    <th class="d-none d-md-table-cell">Stream</th>
+                                    <th class="d-none d-md-table-cell">Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for college in colleges %}
+                                <tr>
+                                    <td>{{ college.College_Name }}</td>
+                                    <td>{{ college.State_name }}</td>
+                                    <td>{{ college.District_Name }}</td>
+                                    <td class="d-none d-md-table-cell">{{ college.Stream }}</td>
+                                    <td class="d-none d-md-table-cell">{{ college.College_Nature_Type }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#collegeModal{{ college.id }}">
+                                            View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Mobile Card View -->
+                    <div class="d-block d-md-none">
+                        {% for college in colleges %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ college.College_Name }}</h5>
+                                <p class="mb-1"><strong>State:</strong> {{ college.State_name }}</p>
+                                <p class="mb-1"><strong>District:</strong> {{ college.District_Name }}</p>
+                                <p class="mb-1"><strong>Stream:</strong> {{ college.Stream }}</p>
+                                <p class="mb-1"><strong>Type:</strong> {{ college.College_Nature_Type }}</p>
+                                <button class="btn btn-sm btn-info mt-2" data-bs-toggle="modal" data-bs-target="#collegeModal{{ college.id }}">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Pagination -->
+                    {% if pagination.pages > 1 %}
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            {% if pagination.has_prev %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ url_for('user.user_search_colleges', page=pagination.prev_num, **request.args) }}">Previous</a>
+                            </li>
+                            {% endif %}
+
+                            {% for page in pagination.iter_pages() %}
+                                {% if page %}
+                                    {% if page != pagination.page %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="{{ url_for('user.user_search_colleges', page=page, **request.args) }}">{{ page }}</a>
+                                    </li>
+                                    {% else %}
+                                    <li class="page-item active">
+                                        <span class="page-link">{{ page }}</span>
+                                    </li>
+                                    {% endif %}
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <span class="page-link">...</span>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if pagination.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="{{ url_for('user.user_search_colleges', page=pagination.next_num, **request.args) }}">Next</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% endif %}
+
+                    {% else %}
+                    <div class="alert alert-info">
+                        No colleges found matching your criteria.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- College Detail Modals -->
+{% for college in colleges %}
+<div class="modal fade" id="collegeModal{{ college.id }}" tabindex="-1" aria-labelledby="collegeModalLabel{{ college.id }}" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="collegeModalLabel{{ college.id }}">{{ college.College_Name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Basic Information</h6>
+                        <ul class="list-unstyled">
+                            <li><strong>State:</strong> {{ college.State_name }}</li>
+                            <li><strong>District:</strong> {{ college.District_Name }}</li>
+                            <li><strong>Stream:</strong> {{ college.Stream }}</li>
+                            <li><strong>Type:</strong> {{ college.College_Nature_Type }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Additional Details</h6>
+                        <ul class="list-unstyled">
+                            <li><strong>Address:</strong> {{ college.Address }}</li>
+                            <li><strong>Phone:</strong> {{ college.Phone_Number }}</li>
+                            <li><strong>Email:</strong> {{ college.Email }}</li>
+                            <li><strong>Website:</strong> {{ college.Website }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="#" class="btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const stateSelect = document.getElementById('state');
+    const districtSelect = document.getElementById('district');
+
+    stateSelect.addEventListener('change', function() {
+        const selectedState = this.value;
+        
+        // Clear and disable district select
+        districtSelect.innerHTML = '<option value="">All Districts</option>';
+        districtSelect.disabled = !selectedState;
+
+        if (selectedState) {
+            // Fetch districts for selected state
+            fetch(`/user/api/districts/${selectedState}`)
+                .then(response => response.json())
+                .then(districts => {
+                    districts.forEach(district => {
+                        const option = document.createElement('option');
+                        option.value = district;
+                        option.textContent = district;
+                        districtSelect.appendChild(option);
+                    });
+                    districtSelect.disabled = false;
+                })
+                .catch(error => console.error('Error fetching districts:', error));
+        }
+    });
+});
+</script>
+{% endblock %} 
