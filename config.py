@@ -42,10 +42,10 @@ class Config:
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
         
-    # Twilio settings (load from environment variables for security)
-    TWILIO_ACCOUNT_SID = os.getenv('TWILIO_ACCOUNT_SID')
-    TWILIO_AUTH_TOKEN = os.getenv('TWILIO_AUTH_TOKEN')
-    TWILIO_VERIFY_SID = os.getenv('TWILIO_VERIFY_SID')
+    # Twilio settings (hardcoded for local/dev use)
+    TWILIO_ACCOUNT_SID = 'ACac40654bde044bee3f9fcca4d0bdeed5'
+    TWILIO_AUTH_TOKEN = 'dfb1d78bf157398722652f362ce20cbd'
+    TWILIO_VERIFY_SID = 'VA97670d71a71ccd367fe6d87964a90252'  # Replace with your actual Verify SID if needed
     
     # Log Twilio configuration
     logger.info("Loading Twilio configuration...")
