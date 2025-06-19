@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Mobile OTP Verification</h3>
+                </div>
+                <div class="card-body">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <form method="POST" action="{{ url_for('auth.otp_verification') }}">
+                        <div class="form-group mb-3">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" 
+                                   placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="otp">OTP</label>
+                            <input type="text" class="form-control" id="otp" name="otp" 
+                                   placeholder="Enter OTP" required>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Verify OTP</button>
+                            <button type="button" class="btn btn-secondary" onclick="resendOTP()">Resend OTP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function resendOTP() {
+    const phone = document.getElementById('phone').value;
+    if (!phone) {
+        alert('Please enter your phone number first');
+        return;
+    }
+    
+    fetch('/resend-otp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phone: phone })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error resending OTP');
+    });
+}
+</script>
+{% endblock %} 

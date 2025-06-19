@@ -1,0 +1,566 @@
+{% extends "base.html" %}
+{% block title %}Home - Skill Navigator{% endblock %}
+{% block content %}
+ <!-- Hero Section -->
+ <section class="hero">
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Navigate Your Path to Success</h1>
+                <p class="lead mb-4">Discover, develop, and showcase the skills that will shape your future career. Skill Navigator helps students find their strengths and connect with opportunities.</p>
+                <div class="d-flex gap-3">
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-light btn-lg">Get Started</a>
+                    <a href="{{ url_for('main.discover_skills') }}" class="btn btn-outline-light btn-lg">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Student success" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="statistics">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3126/3126647.png" alt="Users" class="mb-3" width="50" height="50">
+                    <div class="stat-number">10k+</div>
+                    <p class="mb-0">Active Users</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Skills" class="mb-3" width="50" height="50">
+                    <div class="stat-number">50+</div>
+                    <p class="mb-0">Skill Paths</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2997/2997592.png" alt="Course" class="mb-3" width="50" height="50">
+                    <div class="stat-number">200+</div>
+                    <p class="mb-0">Course Resources</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="Success" class="mb-3" width="50" height="50">
+                    <div class="stat-number">85%</div>
+                    <p class="mb-0">Success Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">How Skill Navigator Works</h2>
+            <p class="lead text-muted">Empowering students to build their professional identity</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/8315/8315824.png" alt="Discover" class="feature-icon">
+                    </div>
+                    <h3 class="h5 mb-3 text-center">Discover Your Skills</h3>
+                    <p class="text-muted">Take assessments designed to identify your natural talents, acquired skills, and areas for growth.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/9385/9385255.png" alt="Develop" class="feature-icon">
+                    </div>
+                    <h3 class="h5 mb-3 text-center">Develop & Track Progress</h3>
+                    <p class="text-muted">Access personalized learning paths, courses, and projects that help you develop the skills employers want.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1693/1693746.png" alt="Connect" class="feature-icon">
+                    </div>
+                    <h3 class="h5 mb-3 text-center">Connect with Opportunities</h3>
+                    <p class="text-muted">Build your digital portfolio and connect with internships, mentors, and job opportunities that match your skills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Student Success Stories</h2>
+            <p class="lead text-muted">Hear from students who transformed their careers with Skill Navigator</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                    <div class="pt-4 mt-2">
+                        <p class="mb-3">"Skill Navigator helped me identify my strengths in data analysis. Now I'm working as a junior data analyst at a tech startup!"</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Computer Science Student</small>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                    <div class="pt-4 mt-2">
+                        <p class="mb-3">"The personalized learning path helped me focus on exactly what I needed to learn for UX design. I landed my dream internship!"</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-0">Michael Roberts</h5>
+                                <small class="text-muted">Design Student</small>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                    <div class="pt-4 mt-2">
+                        <p class="mb-3">"As a career changer, I was lost on where to start. Skill Navigator guided me through learning web development step by step."</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="mb-0">Priya Sharma</h5>
+                                <small class="text-muted">Former Teacher</small>
+                            </div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container cta-content">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold mb-4">Ready to Navigate Your Future?</h2>
+                <p class="lead mb-5">Join thousands of students who are discovering their potential and connecting with opportunities.</p>
+                <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg px-5 py-3">Start Your Journey</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Chatbot Logo Button -->
+<div id="chatbot-logo" title="Chat with us" aria-label="Open chatbot" role="button" tabindex="0" aria-pressed="false">
+    <img src="{{ url_for('static', filename='images/speech-balloon.png') }}" alt="Team member" style="width: 32px; height: 32px; object-fit: contain; display: block; margin: auto;" />
+</div>
+
+<!-- Chatbot Popup Box -->
+<div id="chatbot-popup" role="region" aria-label="Career guidance chatbot" aria-hidden="true" tabindex="-1">
+  <div class="chat-header">
+    <span>SkillNavigator Chatbot</span>
+    <button id="close-btn" aria-label="Close chatbot">&times;</button>
+  </div>
+  <div id="chat-container" role="main" aria-live="polite" aria-atomic="true">
+    <div id="chat-box"></div>
+    <form id="chat-form" autocomplete="off" role="form" aria-describedby="chatInstructions"></form>
+  </div>
+</div>
+
+<style>
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f5f7fa;
+  color: #333;
+}
+#chatbot-logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0078d7;
+  color: white;
+  font-size: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease;
+  user-select: none;
+  z-index: 1000;
+}
+#chatbot-logo:hover, #chatbot-logo:focus {
+  background-color: #005ea2;
+  outline: none;
+}
+#chatbot-popup {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  max-width: 90vw;
+  height: 440px;
+  background: rgba(255,255,255,0.85); /* semi-transparent */
+  border-radius: 14px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  font-size: 14px;
+  color: #444;
+  border: 1.5px solid #0078d7;
+  backdrop-filter: blur(6px);
+}
+#chatbot-popup[style*="flex"] {
+  display: flex;
+}
+.chat-header {
+  background-color: #0078d7;
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.chat-header button:hover, .chat-header button:focus {
+  color: #d1d1d1;
+  outline: none;
+}
+#chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px;
+  background: transparent;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+#chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+.message {
+  max-width: 80%;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  animation: fadeIn 0.3s ease forwards;
+}
+.message.bot {
+  background-color: #e1eaff;
+  color: #1a1a1a;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+.message.user {
+  background-color: #0078d7;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+#chat-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+#chat-form.hidden {
+  display: none;
+}
+.option-btn {
+  flex: 1 1 45%;
+  padding: 10px 15px;
+  background-color: #0078d7;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0,120,215,0.10);
+}
+.option-btn:hover:not(:disabled), .option-btn:focus:not(:disabled) {
+  background-color: #005ea2;
+  outline: none;
+}
+.option-btn:disabled {
+  background-color: #a2c1f7;
+  cursor: default;
+  box-shadow: none;
+}
+#chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-box::-webkit-scrollbar-thumb {
+  background-color: #0078d7;
+  border-radius: 3px;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(5px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@media (max-width: 400px) {
+  #chatbot-popup {
+    width: 95vw;
+    height: 400px;
+    right: 2.5vw;
+    bottom: 80px;
+  }
+  .option-btn {
+    flex: 1 1 100%;
+  }
+}
+.auth-btn {
+  display: inline-block;
+  margin: 12px 8px 0;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  outline: none;
+}
+.auth-btn:hover {
+  background: linear-gradient(135deg, #27ae60, #219150);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.45);
+}
+</style>
+
+<script>
+const chatbotLogo = document.getElementById('chatbot-logo');
+const chatbotPopup = document.getElementById('chatbot-popup');
+const closeBtn = document.getElementById('close-btn');
+const chatBox = document.getElementById("chat-box");
+const chatForm = document.getElementById("chat-form");
+const questions = [
+  { text: "Hi! Welcome to Skill Navigator. I'm here to assist you with your career guidance. May I know your name?", options: [] },
+  { text: "What is your main area of interest?", options: ["Technology", "Business", "Arts"] },
+  { text: "Great! What is your education level?", options: ["High School", "Graduate or Higher"] },
+  { text: "Nice! What is your preferred working style?", options: ["Team Work", "Working Solo", "Remote Work"] }
+];
+let step = 0;
+const answers = [];
+const addMessage = (text, sender = "bot") => {
+  const msg = document.createElement("div");
+  msg.classList.add("message", sender);
+  msg.innerText = text;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+};
+const botTyping = (nextText, delay = 1000) => {
+  addMessage("Typing...", "bot");
+  setTimeout(() => {
+    if(chatBox.lastChild) chatBox.lastChild.remove();
+    addMessage(nextText, "bot");
+  }, delay);
+};
+function renderOptions(question) {
+  chatForm.innerHTML = "";
+  if (question.options.length === 0) {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "user-input";
+    input.placeholder = "Type here...";
+    input.required = true;
+    input.style.padding = "10px";
+    input.style.width = "100%";
+    input.style.fontSize = "14px";
+    input.style.borderRadius = "6px";
+    input.style.border = "1px solid #ccc";
+    const submitBtn = document.createElement("button");
+    submitBtn.type = "submit";
+    submitBtn.textContent = "Send";
+    submitBtn.style.marginTop = "8px";
+    submitBtn.style.padding = "10px";
+    submitBtn.style.width = "100%";
+    submitBtn.style.backgroundColor = "#0078d7";
+    submitBtn.style.color = "white";
+    submitBtn.style.border = "none";
+    submitBtn.style.borderRadius = "6px";
+    submitBtn.style.fontWeight = "600";
+    submitBtn.style.cursor = "pointer";
+    chatForm.appendChild(input);
+    chatForm.appendChild(submitBtn);
+  } else {
+    question.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "option-btn";
+      btn.textContent = option;
+      btn.addEventListener("click", () => handleAnswer(option));
+      chatForm.appendChild(btn);
+    });
+  }
+}
+function handleAnswer(input) {
+  addMessage(input, "user");
+  answers.push(input);
+  step++;
+  Array.from(chatForm.children).forEach(el => el.disabled = true);
+  if (step === 1) {
+    botTyping(`Hello ${input}! Kindly answer the questions below for career guidance.`, 1200);
+    setTimeout(() => {
+      botTyping(questions[step].text, 1300);
+      setTimeout(() => renderOptions(questions[step]), 1400);
+    }, 1500);
+  } else if (step < questions.length) {
+    botTyping(questions[step].text);
+    setTimeout(() => renderOptions(questions[step]), 1300);
+  } else {
+    botTyping("Thanks! Based on your responses, I'm analyzing career options for you... 💡");
+    setTimeout(() => {
+      const [name, interest, education, style] = answers;
+      let suggestion = "";
+      if (interest === "Technology") {
+        if (education === "Graduate or Higher") {
+          suggestion = style === "Team Work" ? "Consider roles like Software Developer, Data Analyst, or IT Project Manager."
+            : style === "Working Solo" ? "Consider roles like Freelance Developer, Data Scientist, or Cybersecurity Specialist."
+            : "Remote Software Developer or Cloud Engineer might suit you well.";
+        } else {
+          suggestion = "Try certifications in IT support, web development, or networking.";
+        }
+      } else if (interest === "Business") {
+        suggestion = education === "Graduate or Higher"
+          ? "Look into roles such as Business Analyst, Marketing Manager, or Financial Advisor."
+          : "Explore courses in sales, digital marketing, or entrepreneurship.";
+      } else if (interest === "Arts") {
+        suggestion = education === "Graduate or Higher"
+          ? "You might enjoy careers in Graphic Design, Content Creation, or Multimedia Arts."
+          : "Consider short-term courses in photography, fine arts, or animation.";
+      } else {
+        suggestion = "Explore diverse online courses to discover your passion!";
+      }
+      addMessage(suggestion, "bot");
+      setTimeout(() => {
+        addMessage("For more career guidance, please create an account or login using the options below:", "bot");
+        chatForm.innerHTML = "";
+        const signupBtn = document.createElement("button");
+        signupBtn.textContent = "Signup";
+        signupBtn.className = "auth-btn signup";
+        signupBtn.onclick = () => {
+          window.location.href = "{{ url_for('auth.signup') }}";
+        };
+        const loginBtn = document.createElement("button");
+        loginBtn.textContent = "Login";
+        loginBtn.className = "auth-btn login";
+        loginBtn.onclick = () => {
+          window.location.href = "{{ url_for('auth.login') }}";
+        };
+        chatForm.appendChild(signupBtn);
+        chatForm.appendChild(loginBtn);
+      }, 1200);
+    }, 1300);
+  }
+}
+function startChat() {
+  chatBox.innerHTML = "";
+  chatForm.innerHTML = "";
+  step = 0;
+  answers.length = 0;
+  addMessage(questions[step].text, "bot");
+  renderOptions(questions[step]);
+}
+function toggleChat() {
+  if (chatbotPopup.style.display === "flex") {
+    chatbotPopup.style.display = "none";
+    chatbotPopup.setAttribute('aria-hidden', 'true');
+    chatbotLogo.setAttribute('aria-pressed', 'false');
+    chatbotLogo.focus();
+  } else {
+    chatbotPopup.style.display = "flex";
+    chatbotPopup.setAttribute('aria-hidden', 'false');
+    chatbotLogo.setAttribute('aria-pressed', 'true');
+    startChat();
+    chatForm.querySelector('button')?.focus();
+  }
+}
+chatbotLogo.addEventListener("click", toggleChat);
+chatbotLogo.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    toggleChat();
+  }
+});
+closeBtn.addEventListener("click", () => {
+  chatbotPopup.style.display = "none";
+  chatbotPopup.setAttribute('aria-hidden', 'true');
+  chatbotLogo.setAttribute('aria-pressed', 'false');
+  chatbotLogo.focus();
+});
+chatForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const inputField = document.getElementById("user-input");
+  const inputValue = inputField?.value.trim();
+  if (inputValue) handleAnswer(inputValue);
+});
+</script>
+
+{% endblock %} 

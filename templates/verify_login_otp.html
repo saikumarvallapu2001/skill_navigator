@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Verify OTP - Skill Navigator{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <h2>Verify OTP</h2>
+                        <p class="text-muted">Please enter the OTP sent to your phone number</p>
+                    </div>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form method="POST" action="{{ url_for('auth.verify_login_otp') }}">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP" required>
+                            <label for="otp">Enter OTP</label>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Verify OTP</button>
+                            <button type="button" class="btn btn-outline-primary" id="resendOtp">Resend OTP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('resendOtp').addEventListener('click', function() {
+    fetch('{{ url_for("auth.resend_otp") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            phone: '{{ session.get("pending_user_id") }}'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('OTP has been resent successfully!');
+        } else {
+            alert('Failed to resend OTP. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+    });
+});
+</script>
+{% endblock %} 

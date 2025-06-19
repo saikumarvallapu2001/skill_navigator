@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy - Skill Navigator{% endblock %}
+
+{% block content %}
+<div class="privacy-container">
+    <div class="container">
+        <div class="privacy-card">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-center mb-4">Privacy Policy</h1>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4 mb-3">1. Information We Collect</h2>
+                            <p>We collect information that you provide directly to us, including:</p>
+                            <ul>
+                                <li>Name and contact information</li>
+                                <li>Account credentials</li>
+                                <li>Profile information</li>
+                                <li>Skill assessments and progress data</li>
+                            </ul>
+
+                            <h2 class="h4 mb-3">2. How We Use Your Information</h2>
+                            <p>We use the information we collect to:</p>
+                            <ul>
+                                <li>Provide and maintain our Service</li>
+                                <li>Notify you about changes to our Service</li>
+                                <li>Provide customer support</li>
+                                <li>Monitor the usage of our Service</li>
+                                <li>Detect, prevent and address technical issues</li>
+                            </ul>
+
+                            <h2 class="h4 mb-3">3. Data Security</h2>
+                            <p>The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
+
+                            <h2 class="h4 mb-3">4. Cookies</h2>
+                            <p>We use cookies and similar tracking technologies to track activity on our Service and hold certain information to improve and analyze our Service.</p>
+
+                            <h2 class="h4 mb-3">5. Third-Party Services</h2>
+                            <p>We may employ third-party companies and individuals to facilitate our Service, provide the Service on our behalf, or assist us in analyzing how our Service is used.</p>
+
+                            <h2 class="h4 mb-3">6. Children's Privacy</h2>
+                            <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13.</p>
+
+                            <h2 class="h4 mb-3">7. Changes to This Privacy Policy</h2>
+                            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+
+                            <h2 class="h4 mb-3">8. Contact Us</h2>
+                            <p>If you have any questions about this Privacy Policy, please contact us at privacy@skillnavigator.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .privacy-container {
+        min-height: calc(100vh - 250px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 0;
+        margin: 40px 0;
+    }
+    .privacy-card {
+        width: 100%;
+        max-width: 900px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background-color: white;
+        padding: 40px;
+    }
+    .privacy-card h1 {
+        color: #333;
+        font-weight: 700;
+    }
+    .privacy-card .card {
+        border: none;
+        box-shadow: none;
+    }
+    .privacy-card .card-body {
+        padding: 0;
+    }
+    .privacy-card h2 {
+        color: #764ba2;
+        font-weight: 600;
+    }
+    .privacy-card p, .privacy-card ul {
+        color: #666;
+        line-height: 1.6;
+    }
+    .privacy-card ul {
+        padding-left: 20px;
+    }
+    .privacy-card li {
+        margin-bottom: 8px;
+    }
+    
+    @media (max-width: 767.98px) {
+        .privacy-container {
+            padding: 40px 0;
+            margin: 20px 0;
+        }
+        .privacy-card {
+            padding: 20px;
+        }
+    }
+</style>
+{% endblock %} 

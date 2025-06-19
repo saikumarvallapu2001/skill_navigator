@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Terms of Service - Skill Navigator{% endblock %}
+
+{% block content %}
+<div class="terms-container">
+    <div class="container">
+        <div class="terms-card">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-center mb-4">Terms of Service</h1>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="h4 mb-3">1. Acceptance of Terms</h2>
+                            <p>By accessing and using Skill Navigator, you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+                            <h2 class="h4 mb-3">2. Description of Service</h2>
+                            <p>Skill Navigator provides a platform for users to discover, learn, and track their skills development journey.</p>
+
+                            <h2 class="h4 mb-3">3. User Registration</h2>
+                            <p>To access certain features of the Service, you must register for an account. You agree to provide accurate and complete information during registration.</p>
+
+                            <h2 class="h4 mb-3">4. User Conduct</h2>
+                            <p>You agree not to:</p>
+                            <ul>
+                                <li>Use the Service for any illegal purpose</li>
+                                <li>Violate any laws in your jurisdiction</li>
+                                <li>Impersonate any person or entity</li>
+                                <li>Interfere with or disrupt the Service</li>
+                            </ul>
+
+                            <h2 class="h4 mb-3">5. Intellectual Property</h2>
+                            <p>The Service and its original content, features, and functionality are owned by Skill Navigator and are protected by international copyright, trademark, and other intellectual property laws.</p>
+
+                            <h2 class="h4 mb-3">6. Termination</h2>
+                            <p>We may terminate or suspend your account and bar access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever.</p>
+
+                            <h2 class="h4 mb-3">7. Changes to Terms</h2>
+                            <p>We reserve the right to modify or replace these Terms at any time. It is your responsibility to review these Terms periodically for changes.</p>
+
+                            <h2 class="h4 mb-3">8. Contact Us</h2>
+                            <p>If you have any questions about these Terms, please contact us at support@skillnavigator.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .terms-container {
+        min-height: calc(100vh - 250px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 0;
+        margin: 40px 0;
+    }
+    .terms-card {
+        width: 100%;
+        max-width: 900px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        background-color: white;
+        padding: 40px;
+    }
+    .terms-card h1 {
+        color: #333;
+        font-weight: 700;
+    }
+    .terms-card .card {
+        border: none;
+        box-shadow: none;
+    }
+    .terms-card .card-body {
+        padding: 0;
+    }
+    .terms-card h2 {
+        color: #764ba2;
+        font-weight: 600;
+    }
+    .terms-card p, .terms-card ul {
+        color: #666;
+        line-height: 1.6;
+    }
+    .terms-card ul {
+        padding-left: 20px;
+    }
+    .terms-card li {
+        margin-bottom: 8px;
+    }
+    
+    @media (max-width: 767.98px) {
+        .terms-container {
+            padding: 40px 0;
+            margin: 20px 0;
+        }
+        .terms-card {
+            padding: 20px;
+        }
+    }
+</style>
+{% endblock %} 
