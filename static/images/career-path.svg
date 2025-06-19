@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="400" height="300" fill="#f8f9fa"/>
+    
+    <!-- Path -->
+    <path d="M 50 150 C 100 50, 300 50, 350 150" 
+          stroke="#4a90e2" 
+          stroke-width="8" 
+          fill="none"
+          stroke-dasharray="10,5"/>
+    
+    <!-- Checkpoints -->
+    <circle cx="50" cy="150" r="15" fill="#4a90e2"/>
+    <circle cx="150" cy="100" r="15" fill="#4a90e2"/>
+    <circle cx="250" cy="100" r="15" fill="#4a90e2"/>
+    <circle cx="350" cy="150" r="15" fill="#4a90e2"/>
+    
+    <!-- Icons -->
+    <text x="50" y="150" text-anchor="middle" fill="white" font-size="20">1</text>
+    <text x="150" y="100" text-anchor="middle" fill="white" font-size="20">2</text>
+    <text x="250" y="100" text-anchor="middle" fill="white" font-size="20">3</text>
+    <text x="350" y="150" text-anchor="middle" fill="white" font-size="20">4</text>
+    
+    <!-- Decorative Elements -->
+    <circle cx="100" cy="75" r="5" fill="#4a90e2" opacity="0.5"/>
+    <circle cx="200" cy="50" r="5" fill="#4a90e2" opacity="0.5"/>
+    <circle cx="300" cy="75" r="5" fill="#4a90e2" opacity="0.5"/>
+</svg> 

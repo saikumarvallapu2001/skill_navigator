@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Navigator - Navigate Your Future</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .features {
+            padding: 80px 0;
+        }
+        .feature-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+        .cta {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            opacity: 0.07;
+            z-index: 0;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .statistics {
+            padding: 80px 0;
+            background: linear-gradient(to right, #f6f9fc, #f1f4f9);
+        }
+        .stat-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .testimonials {
+            padding: 80px 0;
+        }
+        .testimonial-card {
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background-color: white;
+            position: relative;
+            margin-top: 30px;
+        }
+        .testimonial-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            top: -30px;
+            left: 30px;
+            border: 5px solid white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    {% include 'core/includes/navbar.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Navigate Your Path to Success</h1>
+                    <p class="lead mb-4">Discover, develop, and showcase the skills that will shape your future career. Skill Navigator helps students find their strengths and connect with opportunities.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-light btn-lg">Get Started</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Student success" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3126/3126647.png" alt="Users" class="mb-3" width="50" height="50">
+                        <div class="stat-number">10k+</div>
+                        <p class="mb-0">Active Users</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="Skills" class="mb-3" width="50" height="50">
+                        <div class="stat-number">50+</div>
+                        <p class="mb-0">Skill Paths</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2997/2997592.png" alt="Course" class="mb-3" width="50" height="50">
+                        <div class="stat-number">200+</div>
+                        <p class="mb-0">Course Resources</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3281/3281289.png" alt="Success" class="mb-3" width="50" height="50">
+                        <div class="stat-number">85%</div>
+                        <p class="mb-0">Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">How Skill Navigator Works</h2>
+                <p class="lead text-muted">Empowering students to build their professional identity</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="text-center mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8315/8315824.png" alt="Discover" class="feature-icon">
+                        </div>
+                        <h3 class="h5 mb-3 text-center">Discover Your Skills</h3>
+                        <p class="text-muted">Take assessments designed to identify your natural talents, acquired skills, and areas for growth.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="text-center mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9385/9385255.png" alt="Develop" class="feature-icon">
+                        </div>
+                        <h3 class="h5 mb-3 text-center">Develop & Track Progress</h3>
+                        <p class="text-muted">Access personalized learning paths, courses, and projects that help you develop the skills employers want.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="text-center mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1693/1693746.png" alt="Connect" class="feature-icon">
+                        </div>
+                        <h3 class="h5 mb-3 text-center">Connect with Opportunities</h3>
+                        <p class="text-muted">Build your digital portfolio and connect with internships, mentors, and job opportunities that match your skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Student Success Stories</h2>
+                <p class="lead text-muted">Hear from students who transformed their careers with Skill Navigator</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                        <div class="pt-4 mt-2">
+                            <p class="mb-3">"Skill Navigator helped me identify my strengths in data analysis. Now I'm working as a junior data analyst at a tech startup!"</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-0">Sarah Johnson</h5>
+                                    <small class="text-muted">Computer Science Student</small>
+                                </div>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                        <div class="pt-4 mt-2">
+                            <p class="mb-3">"The personalized learning path helped me focus on exactly what I needed to learn for UX design. I landed my dream internship!"</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-0">Michael Roberts</h5>
+                                    <small class="text-muted">Design Student</small>
+                                </div>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80" alt="Testimonial" class="testimonial-image">
+                        <div class="pt-4 mt-2">
+                            <p class="mb-3">"As a career changer, I was lost on where to start. Skill Navigator guided me through learning web development step by step."</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-0">Priya Sharma</h5>
+                                    <small class="text-muted">Former Teacher</small>
+                                </div>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Navigate Your Future?</h2>
+                    <p class="lead mb-5">Join thousands of students who are discovering their potential and connecting with opportunities.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5 py-3">Start Your Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    {% include 'core/includes/footer.html' %}
+
+    <!-- Font Awesome for ratings -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

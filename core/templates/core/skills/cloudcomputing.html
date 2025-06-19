@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Computing - Skill Navigator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .header-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .roadmap-item {
+            border-left: 3px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .roadmap-item:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            left: -9px;
+            top: 5px;
+        }
+        .cloud-benefit {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .cloud-benefit:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    {% include 'core/includes/navbar.html' %}
+    
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Cloud Computing</h1>
+                    <p class="lead mb-4">Master cloud platforms like AWS, Azure, and Google Cloud to build scalable, reliable, and efficient applications.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                        <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cloud Computing" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Platforms Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Major Cloud Platforms</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968348.png" alt="AWS" class="tech-icon">
+                        <h4>Amazon Web Services</h4>
+                        <p>The most comprehensive and widely-adopted cloud platform with over 200 services.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/873/873107.png" alt="Microsoft Azure" class="tech-icon">
+                        <h4>Microsoft Azure</h4>
+                        <p>Microsoft's cloud platform with strong integration for Windows-based businesses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991147.png" alt="Google Cloud" class="tech-icon">
+                        <h4>Google Cloud Platform</h4>
+                        <p>Google's suite of cloud computing services, with strengths in data analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Benefits of Cloud Computing</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="cloud-benefit">
+                        <h4><i class="bi bi-currency-dollar text-primary"></i> Cost Efficiency</h4>
+                        <p>Pay only for what you use, with no upfront infrastructure costs. Scale up or down based on demand.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cloud-benefit">
+                        <h4><i class="bi bi-speedometer2 text-primary"></i> Scalability</h4>
+                        <p>Scale resources up or down instantly to meet changing business demands.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cloud-benefit">
+                        <h4><i class="bi bi-globe text-primary"></i> Global Reach</h4>
+                        <p>Deploy applications globally in minutes, with data centers around the world.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="cloud-benefit">
+                        <h4><i class="bi bi-shield-check text-primary"></i> Security</h4>
+                        <p>Benefit from enterprise-grade security measures and compliance certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Learning Roadmap</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="roadmap-item">
+                        <h4>1. Cloud Fundamentals</h4>
+                        <p>Understand basic cloud concepts, service models (IaaS, PaaS, SaaS), and deployment models.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>2. Choose a Cloud Provider</h4>
+                        <p>Start with one major provider (AWS, Azure, or GCP) and learn its core services and interface.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>3. Core Infrastructure Services</h4>
+                        <p>Master compute instances, storage solutions, networking, and database services.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>4. Security & Identity</h4>
+                        <p>Learn cloud security best practices, identity management, and access control.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>5. Cloud Architecture</h4>
+                        <p>Design reliable, secure, and cost-effective cloud architectures for various applications.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>6. DevOps & Automation</h4>
+                        <p>Master infrastructure as code, CI/CD pipelines, and automated deployment strategies.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>7. Advanced Services</h4>
+                        <p>Explore AI/ML services, containerization, serverless computing, and big data solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Learning Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Official Training</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">AWS Training and Certification</li>
+                                <li class="mb-2">Microsoft Learn for Azure</li>
+                                <li class="mb-2">Google Cloud Training</li>
+                                <li class="mb-2">Cloud Academy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Key Certifications</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">AWS Certified Solutions Architect</li>
+                                <li class="mb-2">Microsoft Azure Administrator</li>
+                                <li class="mb-2">Google Cloud Associate Engineer</li>
+                                <li class="mb-2">CompTIA Cloud+</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Free Resources</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">AWS Free Tier</li>
+                                <li class="mb-2">Azure Free Account</li>
+                                <li class="mb-2">GCP Free Tier</li>
+                                <li class="mb-2">A Cloud Guru - Free Courses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Roles Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Opportunities</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Cloud Engineer</h4>
+                            <p>Design, implement, and manage cloud infrastructure and services.</p>
+                            <p><strong>Avg. Salary:</strong> $120,000 - $150,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Cloud Architect</h4>
+                            <p>Design complex cloud solutions and lead migration strategies.</p>
+                            <p><strong>Avg. Salary:</strong> $140,000 - $180,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">DevOps Engineer</h4>
+                            <p>Automate deployment processes and implement CI/CD pipelines in the cloud.</p>
+                            <p><strong>Avg. Salary:</strong> $115,000 - $145,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Ready to Launch Your Cloud Career?</h2>
+                    <p class="lead mb-5">Start building your cloud computing skills today and open doors to high-demand, well-paying jobs.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'core/includes/footer.html' %}
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

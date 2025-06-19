@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing - Skill Navigator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .header-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .roadmap-item {
+            border-left: 3px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .roadmap-item:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            left: -9px;
+            top: 5px;
+        }
+        .marketing-channel {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .marketing-channel:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card {
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'core/includes/navbar.html' %}
+    
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Digital Marketing</h1>
+                    <p class="lead mb-4">Learn strategies to promote brands and products in the digital landscape, reaching target audiences through multiple online channels.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                        <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Digital Marketing" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Digital Marketing Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Digital Marketing Matters</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">63%</div>
+                        <p>of shopping experiences begin online</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">$450B</div>
+                        <p>global digital ad spending in 2023</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">72%</div>
+                        <p>of marketers say content strategy was key to success</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead text-center">Digital marketing has transformed how businesses connect with customers, creating unprecedented opportunities to target audiences with precision, measure results in real-time, and adapt strategies for maximum ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Channels Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Key Digital Marketing Channels</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Search Engine Optimization (SEO)</h4>
+                        <p>Optimize websites to rank higher in search engine results, driving organic traffic.</p>
+                        <p><strong>Key aspects:</strong> On-page SEO, off-page SEO, technical SEO, keyword research</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Content Marketing</h4>
+                        <p>Create and distribute valuable content to attract and engage a target audience.</p>
+                        <p><strong>Key aspects:</strong> Blogging, video content, infographics, eBooks, whitepapers</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Social Media Marketing</h4>
+                        <p>Promote brands and connect with audiences on social media platforms.</p>
+                        <p><strong>Key aspects:</strong> Strategy, community management, paid social advertising</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Email Marketing</h4>
+                        <p>Communicate directly with prospects and customers through targeted email campaigns.</p>
+                        <p><strong>Key aspects:</strong> List building, segmentation, A/B testing, automation</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Pay-Per-Click (PPC) Advertising</h4>
+                        <p>Drive traffic through paid ads on search engines and other digital platforms.</p>
+                        <p><strong>Key aspects:</strong> Google Ads, bidding strategies, ad copywriting, landing pages</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="marketing-channel">
+                        <h4>Analytics & Data</h4>
+                        <p>Measure and analyze marketing performance to optimize strategies.</p>
+                        <p><strong>Key aspects:</strong> Google Analytics, conversion tracking, attribution modeling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Essential Marketing Tools</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="SEO Tools" class="tech-icon">
+                        <h4>SEO</h4>
+                        <p>Ahrefs, SEMrush, Moz, Google Search Console</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059997.png" alt="Social Media Tools" class="tech-icon">
+                        <h4>Social Media</h4>
+                        <p>Hootsuite, Buffer, Sprout Social, Canva</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email Tools" class="tech-icon">
+                        <h4>Email</h4>
+                        <p>Mailchimp, Constant Contact, ActiveCampaign</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="p-3 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1373/1373598.png" alt="Analytics Tools" class="tech-icon">
+                        <h4>Analytics</h4>
+                        <p>Google Analytics, Hotjar, Mixpanel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Digital Marketing Learning Roadmap</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="roadmap-item">
+                        <h4>1. Marketing Fundamentals</h4>
+                        <p>Understand basic marketing principles, target audience definition, and buyer personas.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>2. Content Creation</h4>
+                        <p>Develop skills in copywriting, visual content creation, and storytelling for different platforms.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>3. SEO Basics</h4>
+                        <p>Learn keyword research, on-page optimization, and technical SEO fundamentals.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>4. Social Media Marketing</h4>
+                        <p>Master strategies for different platforms, community management, and paid social advertising.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>5. Email Marketing</h4>
+                        <p>Understand list building, email automation, segmentation, and campaign optimization.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>6. Paid Advertising</h4>
+                        <p>Learn PPC fundamentals, ad copywriting, campaign setup, and optimization.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>7. Analytics & Measurement</h4>
+                        <p>Develop skills in tracking, analyzing, and reporting on marketing performance.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>8. Strategy & Optimization</h4>
+                        <p>Build comprehensive marketing strategies, A/B testing methods, and conversion optimization techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Learning Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Certifications</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Google Digital Marketing Certification</li>
+                                <li class="mb-2">HubSpot Inbound Marketing Certification</li>
+                                <li class="mb-2">Facebook Blueprint Certification</li>
+                                <li class="mb-2">SEMrush Academy Certifications</li>
+                                <li class="mb-2">Google Analytics Certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Courses & Platforms</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Coursera - Digital Marketing Specialization</li>
+                                <li class="mb-2">Udemy - Complete Digital Marketing Course</li>
+                                <li class="mb-2">LinkedIn Learning - Marketing Paths</li>
+                                <li class="mb-2">DigitalMarketer.com Training</li>
+                                <li class="mb-2">HubSpot Academy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Blogs & Resources</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Moz Blog</li>
+                                <li class="mb-2">HubSpot Blog</li>
+                                <li class="mb-2">Neil Patel's Blog</li>
+                                <li class="mb-2">Search Engine Journal</li>
+                                <li class="mb-2">Content Marketing Institute</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Opportunities</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Digital Marketing Specialist</h4>
+                            <p>Manage various digital marketing channels for maximum impact.</p>
+                            <p><strong>Key Skills:</strong> SEO, SEM, Social Media, Content Marketing</p>
+                            <p><strong>Avg. Salary:</strong> $55,000 - $80,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">SEO Manager</h4>
+                            <p>Develop and implement strategies to improve organic search rankings.</p>
+                            <p><strong>Key Skills:</strong> Technical SEO, Link Building, Content Strategy</p>
+                            <p><strong>Avg. Salary:</strong> $65,000 - $95,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Social Media Manager</h4>
+                            <p>Create and manage content across social platforms to build brand presence.</p>
+                            <p><strong>Key Skills:</strong> Content Creation, Community Management, Analytics</p>
+                            <p><strong>Avg. Salary:</strong> $50,000 - $75,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Ideas Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfolio Project Ideas</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Beginner Projects</h4>
+                            <ul>
+                                <li>Create and optimize a blog to demonstrate SEO skills</li>
+                                <li>Build a social media campaign for a local business</li>
+                                <li>Develop an email newsletter with growth strategy</li>
+                                <li>Create a content calendar for a specific niche</li>
+                                <li>Perform a competitor analysis for a brand</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Advanced Projects</h4>
+                            <ul>
+                                <li>Develop a comprehensive digital marketing strategy for a business</li>
+                                <li>Create and manage a Google Ads campaign with measurable ROI</li>
+                                <li>Build an affiliate marketing website</li>
+                                <li>Implement and analyze A/B tests for landing pages</li>
+                                <li>Create a full-scale content marketing strategy with conversion goals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Launch Your Digital Marketing Career</h2>
+                    <p class="lead mb-5">Master the skills to help businesses grow their online presence, engage with customers, and drive measurable results.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'core/includes/footer.html' %}
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

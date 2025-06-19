@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development - Skill Navigator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .header-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .roadmap-item {
+            border-left: 3px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .roadmap-item:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            left: -9px;
+            top: 5px;
+        }
+        .platform-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .platform-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-card {
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .language-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background-color: #e9ecef;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    {% include 'core/includes/navbar.html' %}
+    
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Mobile App Development</h1>
+                    <p class="lead mb-4">Build native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                        <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mobile App Development" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Stats Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Mobile App Market Insights</h2>
+            <div class="row g-3 g-md-4 justify-content-center">
+                <div class="col-10 col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">7.1B</div>
+                        <p>mobile users worldwide in 2023</p>
+                    </div>
+                </div>
+                <div class="col-10 col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">$935B</div>
+                        <p>global app revenue by 2023</p>
+                    </div>
+                </div>
+                <div class="col-10 col-md-4">
+                    <div class="stat-card bg-light">
+                        <div class="stat-number">255B</div>
+                        <p>app downloads annually</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead text-center">Mobile apps have transformed how we interact with technology, businesses, and each other. As smartphones become increasingly central to our daily lives, the demand for skilled mobile developers continues to grow rapidly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Approaches Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Mobile Development Approaches</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="platform-card">
+                        <h4>Native Development</h4>
+                        <p>Build apps specifically for iOS (Swift/Objective-C) or Android (Kotlin/Java) platforms.</p>
+                        <p><strong>Pros:</strong> Best performance, full access to device features, platform-specific UI/UX</p>
+                        <p><strong>Cons:</strong> Requires learning multiple languages, separate codebases for each platform</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="platform-card">
+                        <h4>Cross-Platform Development</h4>
+                        <p>Use frameworks like React Native or Flutter to build apps for multiple platforms from a single codebase.</p>
+                        <p><strong>Pros:</strong> Faster development, code reuse, wider reach with less effort</p>
+                        <p><strong>Cons:</strong> Some performance limitations, occasional platform-specific issues</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="platform-card">
+                        <h4>Hybrid Development</h4>
+                        <p>Create apps using web technologies (HTML/CSS/JavaScript) wrapped in a native container.</p>
+                        <p><strong>Pros:</strong> Easiest learning curve, fastest development for simple apps</p>
+                        <p><strong>Cons:</strong> Lower performance, limited access to native features</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stacks Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Popular Technology Stacks</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-4 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/831/831276.png" alt="iOS" class="tech-icon">
+                        <h4>iOS Development</h4>
+                        <p>Swift, Objective-C, Xcode</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888839.png" alt="Android" class="tech-icon">
+                        <h4>Android Development</h4>
+                        <p>Kotlin, Java, Android Studio</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2374/2374537.png" alt="Cross Platform" class="tech-icon">
+                        <h4>Cross-Platform</h4>
+                        <p>React Native, Flutter, Xamarin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Mobile App Development Learning Roadmap</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="roadmap-item">
+                        <h4>1. Programming Fundamentals</h4>
+                        <p>Master programming basics in your chosen language (Swift, Kotlin, JavaScript, or Dart).</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>2. Platform Basics</h4>
+                        <p>Learn platform architecture, lifecycle, and core components of iOS, Android, or cross-platform frameworks.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>3. UI Development</h4>
+                        <p>Understand layouts, components, and responsive design principles for mobile interfaces.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>4. Data Management</h4>
+                        <p>Learn to work with local storage, APIs, databases, and network requests.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>5. Advanced Features</h4>
+                        <p>Implement device features like camera, GPS, biometrics, and notifications.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>6. Testing & Debugging</h4>
+                        <p>Master testing techniques, debugging processes, and performance optimization.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>7. App Store Publishing</h4>
+                        <p>Learn to prepare, package, and publish apps to the App Store and Google Play Store.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>8. Advanced Concepts</h4>
+                        <p>Explore animations, custom UI components, architecture patterns (MVC, MVVM, etc.), and CI/CD.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Learning Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">iOS Development</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Apple Developer Documentation</li>
+                                <li class="mb-2">Stanford CS193p iOS Development Course</li>
+                                <li class="mb-2">Hacking with Swift by Paul Hudson</li>
+                                <li class="mb-2">Ray Wenderlich iOS Tutorials</li>
+                                <li class="mb-2">Udemy - iOS 13 & Swift 5 Course</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Android Development</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Android Developer Documentation</li>
+                                <li class="mb-2">Udacity - Android Developer Nanodegree</li>
+                                <li class="mb-2">Google Codelabs</li>
+                                <li class="mb-2">Kotlin for Android Developers Book</li>
+                                <li class="mb-2">Coursera - Android App Development Specialization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Cross-Platform Development</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">React Native Documentation</li>
+                                <li class="mb-2">Flutter Documentation & Codelabs</li>
+                                <li class="mb-2">The Complete React Native + Hooks Course</li>
+                                <li class="mb-2">Flutter & Dart - The Complete Guide</li>
+                                <li class="mb-2">Academind React Native Courses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Opportunities</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Mobile App Developer</h4>
+                            <p>Build mobile applications for either iOS, Android, or using cross-platform technologies.</p>
+                            <p><strong>Key Skills:</strong> Swift/Kotlin, UI Design, API Integration, Debugging</p>
+                            <p><strong>Avg. Salary:</strong> $85,000 - $120,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Mobile Team Lead</h4>
+                            <p>Lead development teams, make technical decisions, and ensure code quality.</p>
+                            <p><strong>Key Skills:</strong> Architecture Design, Team Management, Code Review</p>
+                            <p><strong>Avg. Salary:</strong> $120,000 - $150,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Mobile DevOps Engineer</h4>
+                            <p>Automate building, testing, and deployment of mobile applications.</p>
+                            <p><strong>Key Skills:</strong> CI/CD, Fastlane, App Store Connect API, Google Play Console</p>
+                            <p><strong>Avg. Salary:</strong> $95,000 - $130,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Ideas Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfolio Project Ideas</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Beginner Projects</h4>
+                            <ul>
+                                <li>To-do list app with local storage</li>
+                                <li>Weather app using public APIs</li>
+                                <li>Recipe finder with search functionality</li>
+                                <li>Simple note-taking app with categories</li>
+                                <li>Quiz or trivia game with scoring system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Advanced Projects</h4>
+                            <ul>
+                                <li>Social media app with user authentication and real-time data</li>
+                                <li>E-commerce app with payment integration</li>
+                                <li>Fitness tracking app using device sensors</li>
+                                <li>Food delivery app with maps integration</li>
+                                <li>Messaging app with push notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Start Building Mobile Apps Today</h2>
+                    <p class="lead mb-5">Learn to develop mobile applications that millions of users can interact with daily and launch your career in one of technology's most dynamic fields.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'core/includes/footer.html' %}
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

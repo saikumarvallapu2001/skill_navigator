@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- Chart Elements -->
+    <g transform="translate(100, 100)">
+        <!-- Bar Chart -->
+        <rect x="0" y="200" width="60" height="200" fill="#4e73df" opacity="0.8"/>
+        <rect x="80" y="150" width="60" height="250" fill="#4e73df" opacity="0.8"/>
+        <rect x="160" y="100" width="60" height="300" fill="#4e73df" opacity="0.8"/>
+        <rect x="240" y="50" width="60" height="350" fill="#4e73df" opacity="0.8"/>
+        <rect x="320" y="0" width="60" height="400" fill="#4e73df" opacity="0.8"/>
+        
+        <!-- Line Chart -->
+        <path d="M0,300 L80,250 L160,200 L240,150 L320,100 L400,50" 
+              stroke="#1cc88a" stroke-width="4" fill="none"/>
+        <circle cx="0" cy="300" r="6" fill="#1cc88a"/>
+        <circle cx="80" cy="250" r="6" fill="#1cc88a"/>
+        <circle cx="160" cy="200" r="6" fill="#1cc88a"/>
+        <circle cx="240" cy="150" r="6" fill="#1cc88a"/>
+        <circle cx="320" cy="100" r="6" fill="#1cc88a"/>
+        <circle cx="400" cy="50" r="6" fill="#1cc88a"/>
+    </g>
+    
+    <!-- Decorative Elements -->
+    <g transform="translate(600, 100)">
+        <!-- Pie Chart -->
+        <path d="M0,0 L100,0 A100,100 0 0,1 50,86.6 Z" fill="#4e73df" opacity="0.8"/>
+        <path d="M0,0 L50,86.6 A100,100 0 0,1 -50,86.6 Z" fill="#1cc88a" opacity="0.8"/>
+        <path d="M0,0 L-50,86.6 A100,100 0 0,1 -100,0 Z" fill="#36b9cc" opacity="0.8"/>
+        <circle cx="0" cy="0" r="60" fill="white"/>
+    </g>
+    
+    <!-- Icons -->
+    <g transform="translate(650, 400)">
+        <circle cx="0" cy="0" r="40" fill="#4e73df" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#4e73df">📊</text>
+    </g>
+    
+    <g transform="translate(550, 400)">
+        <circle cx="0" cy="0" r="40" fill="#1cc88a" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#1cc88a">👥</text>
+    </g>
+    
+    <g transform="translate(450, 400)">
+        <circle cx="0" cy="0" r="40" fill="#36b9cc" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#36b9cc">⚡</text>
+    </g>
+</svg> 

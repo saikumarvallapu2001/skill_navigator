@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+
+{% block title %}Career Suggestion - Skill Navigator{% endblock %}
+{% block extra_css %}
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        overflow-x: hidden;
+    }
+    .header-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+        margin-bottom: 30px;
+    }
+    .content-section {
+        padding: 60px 0;
+    }
+    .card-career {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+        height: 100%;
+    }
+    .card-career:hover {
+        transform: translateY(-5px);
+    }
+    .card-career .card-header {
+        background-color: #3498db;
+        color: white;
+        font-weight: bold;
+        padding: 15px 20px;
+    }
+    .form-container {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .career-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    @media (max-width: 768px) {
+        .header-section {
+            padding: 40px 0;
+        }
+        .content-section {
+            padding: 40px 0;
+        }
+        .form-container {
+            padding: 20px;
+        }
+    }
+</style>
+{% endblock %}
+{% block content %}
+<section class="header-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-4">Find Your Perfect Career Path</h1>
+                <p class="lead mb-4">Get personalized career suggestions based on your academic performance, background, and location to make informed decisions about your future.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Career planning" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Career Form Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="form-container">
+                    <h2 class="text-center mb-4">Enter Your Details</h2>
+                    <form id="careerForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="marks" class="form-label">Percentage/CGPA</label>
+                                <input type="number" class="form-control" id="marks" min="0" max="100" step="0.01" required>
+                                <small class="form-text text-muted">Enter percentage (0-100) or CGPA on a 10-point scale</small>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="education" class="form-label">Highest Education Level</label>
+                                <select class="form-select" id="education" required>
+                                    <option value="" selected disabled>Select your education level</option>
+                                    <option value="10th">10th Standard</option>
+                                    <option value="12th">12th Standard</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="phd">Ph.D</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="stream" class="form-label">Stream/Major</label>
+                                <select class="form-select" id="stream" required>
+                                    <option value="" selected disabled>Select your stream</option>
+                                    <option value="science">Science</option>
+                                    <option value="commerce">Commerce</option>
+                                    <option value="arts">Arts</option>
+                                    <option value="engineering">Engineering</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="management">Management</option>
+                                    <option value="humanities">Humanities</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="caste" class="form-label">Caste Category</label>
+                                <select class="form-select" id="caste">
+                                    <option value="" selected disabled>Select your category</option>
+                                    <option value="general">General</option>
+                                    <option value="obc">OBC</option>
+                                    <option value="sc">SC</option>
+                                    <option value="st">ST</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="state" class="form-label">State</label>
+                                <select class="form-select" id="state" required>
+                                    <option value="" selected disabled>Select your state</option>
+                                    <option value="andhra_pradesh">Andhra Pradesh</option>
+                                    <option value="arunachal_pradesh">Arunachal Pradesh</option>
+                                    <option value="assam">Assam</option>
+                                    <option value="bihar">Bihar</option>
+                                    <option value="chhattisgarh">Chhattisgarh</option>
+                                    <option value="goa">Goa</option>
+                                    <option value="gujarat">Gujarat</option>
+                                    <option value="haryana">Haryana</option>
+                                    <option value="himachal_pradesh">Himachal Pradesh</option>
+                                    <option value="jharkhand">Jharkhand</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="madhya_pradesh">Madhya Pradesh</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="manipur">Manipur</option>
+                                    <option value="meghalaya">Meghalaya</option>
+                                    <option value="mizoram">Mizoram</option>
+                                    <option value="nagaland">Nagaland</option>
+                                    <option value="odisha">Odisha</option>
+                                    <option value="punjab">Punjab</option>
+                                    <option value="rajasthan">Rajasthan</option>
+                                    <option value="sikkim">Sikkim</option>
+                                    <option value="tamil_nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="tripura">Tripura</option>
+                                    <option value="uttar_pradesh">Uttar Pradesh</option>
+                                    <option value="uttarakhand">Uttarakhand</option>
+                                    <option value="west_bengal">West Bengal</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">Get Career Suggestions</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Career Suggestions Section -->
+<section class="content-section bg-light" id="careerSuggestions" style="display: none;">
+    <div class="container">
+        <h2 class="text-center mb-5">Recommended Career Paths</h2>
+        <p class="text-center mb-5 lead">Based on your profile, here are some career paths that might be a good fit for you:</p>
+        <div class="row g-4" id="careerCards">
+            <!-- Career cards will be dynamically added here -->
+        </div>
+    </div>
+</section>
+
+<!-- Scholarship Section -->
+<section class="content-section" id="scholarshipSection" style="display: none;">
+    <div class="container">
+        <h2 class="text-center mb-5">Available Scholarships</h2>
+        <p class="text-center mb-5 lead">Here are scholarships you may be eligible for based on your background:</p>
+        <div class="row g-4" id="scholarshipCards">
+            <!-- Scholarship cards will be dynamically added here -->
+        </div>
+    </div>
+</section>
+
+<!-- Career Templates -->
+<div style="display: none;" id="careerTemplates">
+    <!-- Template for Tech career -->
+    <div class="tech-career-template">
+        <div class="col-md-4">
+            <div class="card card-career">
+                <div class="card-header">
+                    <h4 class="mb-0">Software Development</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" alt="Software Development" class="career-icon">
+                    </div>
+                    <p>Develop applications, websites, and software solutions using programming languages and tools.</p>
+                    <h5>Required Skills:</h5>
+                    <ul>
+                        <li>Programming languages (Java, Python, JavaScript)</li>
+                        <li>Problem-solving abilities</li>
+                        <li>Knowledge of software development lifecycle</li>
+                    </ul>
+                    <h5>Potential Roles:</h5>
+                    <ul>
+                        <li>Software Engineer</li>
+                        <li>Web Developer</li>
+                        <li>Mobile App Developer</li>
+                    </ul>
+                    <a href="/skills/webdevelopment" class="btn btn-primary mt-3 w-100">Explore Web Development</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Template for Engineering career -->
+    <div class="engineering-career-template">
+        <div class="col-md-4">
+            <div class="card card-career">
+                <div class="card-header">
+                    <h4 clas s="mb-0">Engineering</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3022/3022397.png" alt="Engineering" class="career-icon">
+                    </div>
+                    <p>Design, develop, and test solutions to technical problems in various industries.</p>
+                    <h5>Required Skills:</h5>
+                    <ul>
+                        <li>Strong analytical and mathematical skills</li>
+                        <li>Problem-solving and critical thinking</li>
+                        <li>Industry-specific technical knowledge</li>
+                    </ul>
+                    <h5>Potential Roles:</h5>
+                    <ul>
+                        <li>Mechanical Engineer</li>
+                        <li>Civil Engineer</li>
+                        <li>Electrical Engineer</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Template for Data Science career -->
+    <div class="data-career-template">
+        <div class="col-md-4">
+            <div class="card card-career">
+                <div class="card-header">
+                    <h4 class="mb-0">Data Science</h4>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Data Science" class="career-icon">
+                    </div>
+                    <p>Analyze complex data sets to extract insights and help organizations make data-driven decisions.</p>
+                    <h5>Required Skills:</h5>
+                    <ul>
+                        <li>Statistics and mathematics</li>
+                        <li>Programming in Python or R</li>
+                        <li>Data visualization and communication</li>
+                    </ul>
+                    <h5>Potential Roles:</h5>
+                    <ul>
+                        <li>Data Scientist</li>
+                        <li>Data Analyst</li>
+                        <li>Machine Learning Engineer</li>
+                    </ul>
+                    <a href="/skills/datascience" class="btn btn-primary mt-3 w-100">Explore Data Science</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Career Suggestion Modal -->
+<div class="modal fade" id="careerModal" tabindex="-1" aria-labelledby="careerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="careerModalLabel">Career Suggestion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="careerModalBody">
+        <!-- User details and career suggestion will appear here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="suggestionHistory" class="mt-4"></div>
+
+<script>
+document.getElementById('careerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  fetch('/career-suggestion', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    // Collect user details from the form
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const marks = document.getElementById('marks').value;
+    const education = document.getElementById('education').value;
+    const stream = document.getElementById('stream').value;
+    const caste = document.getElementById('caste').value;
+    const state = document.getElementById('state').value;
+    const city = document.getElementById('city').value;
+
+    // Build the details HTML
+    const detailsHtml = `
+      <div class='mb-3'><strong>Your Details:</strong><br>
+        Name: ${name}<br>
+        Email: ${email}<br>
+        Marks: ${marks}<br>
+        Education: ${education}<br>
+        Stream: ${stream}<br>
+        Caste: ${caste}<br>
+        State: ${state}<br>
+        City: ${city}
+      </div>
+      <div class='alert alert-success text-center'><strong>Suggested Career:</strong> ${data.career}</div>
+    `;
+    document.getElementById('careerModalBody').innerHTML = detailsHtml;
+    var modal = new bootstrap.Modal(document.getElementById('careerModal'));
+    modal.show();
+
+    // Add to history
+    const historyDiv = document.getElementById('suggestionHistory');
+    const historyHtml = `
+      <div class='card mb-2'>
+        <div class='card-body'>
+          <div><strong>Your Details:</strong> ${name}, ${email}, ${marks}, ${education}, ${stream}, ${caste}, ${state}, ${city}</div>
+          <div><strong>Suggested Career:</strong> <span class="badge bg-success">${data.career}</span></div>
+        </div>
+      </div>
+    `;
+    historyDiv.innerHTML += historyHtml;
+  });
+});
+</script>
+
+{% endblock %} 

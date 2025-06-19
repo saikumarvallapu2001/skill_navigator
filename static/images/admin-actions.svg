@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- Dashboard Layout -->
+    <g transform="translate(100, 100)">
+        <!-- Main Panel -->
+        <rect x="0" y="0" width="400" height="300" rx="10" fill="white" stroke="#e3e6f0" stroke-width="2"/>
+        
+        <!-- Header -->
+        <rect x="0" y="0" width="400" height="60" rx="10" fill="#4e73df" opacity="0.1"/>
+        <text x="20" y="35" font-family="Arial" font-size="16" fill="#4e73df">Admin Dashboard</text>
+        
+        <!-- Menu Items -->
+        <g transform="translate(20, 80)">
+            <!-- Users -->
+            <rect x="0" y="0" width="360" height="50" rx="5" fill="#f8f9fa"/>
+            <circle cx="25" cy="25" r="15" fill="#4e73df" opacity="0.1"/>
+            <text x="50" y="30" font-family="Arial" font-size="14" fill="#5a5c69">Users</text>
+            <text x="340" y="30" font-family="Arial" font-size="14" fill="#5a5c69" text-anchor="end">→</text>
+            
+            <!-- Skills -->
+            <rect x="0" y="70" width="360" height="50" rx="5" fill="#f8f9fa"/>
+            <circle cx="25" cy="95" r="15" fill="#1cc88a" opacity="0.1"/>
+            <text x="50" y="100" font-family="Arial" font-size="14" fill="#5a5c69">Skills</text>
+            <text x="340" y="100" font-family="Arial" font-size="14" fill="#5a5c69" text-anchor="end">→</text>
+            
+            <!-- Settings -->
+            <rect x="0" y="140" width="360" height="50" rx="5" fill="#f8f9fa"/>
+            <circle cx="25" cy="165" r="15" fill="#36b9cc" opacity="0.1"/>
+            <text x="50" y="170" font-family="Arial" font-size="14" fill="#5a5c69">Settings</text>
+            <text x="340" y="170" font-family="Arial" font-size="14" fill="#5a5c69" text-anchor="end">→</text>
+        </g>
+    </g>
+    
+    <!-- Decorative Elements -->
+    <g transform="translate(600, 100)">
+        <!-- Settings Gear -->
+        <circle cx="0" cy="0" r="80" fill="#4e73df" opacity="0.1"/>
+        <path d="M0,-60 L0,-40 M0,40 L0,60 M-60,0 L-40,0 M40,0 L60,0 M-42.4,-42.4 L-28.3,-28.3 M28.3,28.3 L42.4,42.4 M-42.4,42.4 L-28.3,28.3 M28.3,-28.3 L42.4,-42.4" 
+              stroke="#4e73df" stroke-width="4"/>
+        <circle cx="0" cy="0" r="20" fill="#4e73df"/>
+    </g>
+    
+    <!-- Icons -->
+    <g transform="translate(650, 400)">
+        <circle cx="0" cy="0" r="40" fill="#4e73df" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#4e73df">⚙️</text>
+    </g>
+    
+    <g transform="translate(550, 400)">
+        <circle cx="0" cy="0" r="40" fill="#1cc88a" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#1cc88a">👥</text>
+    </g>
+    
+    <g transform="translate(450, 400)">
+        <circle cx="0" cy="0" r="40" fill="#36b9cc" opacity="0.1"/>
+        <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+              font-family="FontAwesome" font-size="24" fill="#36b9cc">🔧</text>
+    </g>
+</svg> 

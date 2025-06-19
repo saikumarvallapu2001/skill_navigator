@@ -1,0 +1,34 @@
+{% extends "base_dashboard.html" %}
+
+{% block title %}Manage Colleges{% endblock %}
+
+{% block page_title %}Manage Colleges{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Add New College</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('admin.add_college') }}">
+                    <div class="mb-3">
+                        <label for="collegeName" class="form-label">College Name</label>
+                        <input type="text" class="form-control" id="collegeName" name="college_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="collegeLocation" class="form-label">Location</label>
+                        <input type="text" class="form-control" id="collegeLocation" name="college_location" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="collegeWebsite" class="form-label">Website</label>
+                        <input type="url" class="form-control" id="collegeWebsite" name="college_website" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add College</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science - Skill Navigator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        .header-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-bottom: 30px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+        .roadmap-item {
+            border-left: 3px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .roadmap-item:before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #3498db;
+            left: -9px;
+            top: 5px;
+        }
+        .data-tool {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .data-tool:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    {% include 'core/includes/navbar.html' %}
+    
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Data Science</h1>
+                    <p class="lead mb-4">Master data analysis, visualization, and machine learning techniques to extract valuable insights and solve complex problems.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#roadmap" class="btn btn-primary">Learning Roadmap</a>
+                        <a href="#resources" class="btn btn-outline-primary">Resources</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Data Science" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Skills Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Core Data Science Skills</h2>
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Statistics" class="tech-icon">
+                        <h4>Statistics</h4>
+                        <p>Foundation of data analysis and inference</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Programming" class="tech-icon">
+                        <h4>Programming</h4>
+                        <p>Python, R for data manipulation</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2103/2103660.png" alt="Machine Learning" class="tech-icon">
+                        <h4>Machine Learning</h4>
+                        <p>Building predictive models</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-3">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4116/4116437.png" alt="Data Visualization" class="tech-icon">
+                        <h4>Visualization</h4>
+                        <p>Communicating insights visually</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Essential Data Science Tools</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="data-tool">
+                        <h4>Python Libraries</h4>
+                        <p class="mb-1"><strong>NumPy:</strong> Scientific computing</p>
+                        <p class="mb-1"><strong>Pandas:</strong> Data manipulation and analysis</p>
+                        <p class="mb-1"><strong>Matplotlib/Seaborn:</strong> Data visualization</p>
+                        <p class="mb-1"><strong>Scikit-learn:</strong> Machine learning</p>
+                        <p><strong>TensorFlow/PyTorch:</strong> Deep learning</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-tool">
+                        <h4>Database Technologies</h4>
+                        <p class="mb-1"><strong>SQL:</strong> Relational database queries</p>
+                        <p class="mb-1"><strong>MongoDB:</strong> NoSQL database</p>
+                        <p class="mb-1"><strong>Hadoop:</strong> Big data processing</p>
+                        <p class="mb-1"><strong>Spark:</strong> Fast, distributed data processing</p>
+                        <p><strong>BigQuery:</strong> Google's serverless data warehouse</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="data-tool">
+                        <h4>Development Environments</h4>
+                        <p class="mb-1"><strong>Jupyter Notebooks:</strong> Interactive computing</p>
+                        <p class="mb-1"><strong>RStudio:</strong> R programming environment</p>
+                        <p class="mb-1"><strong>VS Code:</strong> Versatile code editor</p>
+                        <p class="mb-1"><strong>Google Colab:</strong> Free cloud-based notebooks</p>
+                        <p><strong>Anaconda:</strong> Python distribution for data science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Data Science Learning Roadmap</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="roadmap-item">
+                        <h4>1. Foundations</h4>
+                        <p>Master programming basics in Python or R, statistics fundamentals, and linear algebra.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>2. Data Analysis & Manipulation</h4>
+                        <p>Learn to clean, process, and explore data using Pandas, NumPy, and visualization libraries.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>3. Statistical Analysis</h4>
+                        <p>Develop skills in hypothesis testing, probability distributions, and statistical inference.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>4. Machine Learning Fundamentals</h4>
+                        <p>Understand supervised and unsupervised learning algorithms, model evaluation, and validation techniques.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>5. Advanced Machine Learning</h4>
+                        <p>Master ensemble methods, feature engineering, and model optimization strategies.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>6. Deep Learning</h4>
+                        <p>Study neural networks, computer vision, natural language processing, and deep learning frameworks.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>7. Big Data Technologies</h4>
+                        <p>Learn to work with large-scale data using tools like Hadoop, Spark, and cloud data platforms.</p>
+                    </div>
+                    <div class="roadmap-item">
+                        <h4>8. Specialization</h4>
+                        <p>Focus on a specific domain such as computer vision, NLP, recommender systems, or time series analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Learning Resources</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Online Courses</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Andrew Ng's Machine Learning (Stanford/Coursera)</li>
+                                <li class="mb-2">IBM Data Science Professional Certificate</li>
+                                <li class="mb-2">DataCamp Data Scientist Track</li>
+                                <li class="mb-2">Fast.ai Deep Learning Courses</li>
+                                <li class="mb-2">MIT OpenCourseWare - Data Science</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Books</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Python for Data Analysis (Wes McKinney)</li>
+                                <li class="mb-2">Hands-On Machine Learning with Scikit-Learn & TensorFlow</li>
+                                <li class="mb-2">An Introduction to Statistical Learning</li>
+                                <li class="mb-2">Deep Learning (Goodfellow, Bengio, Courville)</li>
+                                <li class="mb-2">Data Science for Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Competitions & Practice</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Kaggle - Datasets and Competitions</li>
+                                <li class="mb-2">UCI Machine Learning Repository</li>
+                                <li class="mb-2">HackerRank - Data Science Challenges</li>
+                                <li class="mb-2">DrivenData - Data Science Competitions</li>
+                                <li class="mb-2">Real-world GitHub projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Career Paths in Data Science</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Data Analyst</h4>
+                            <p>Analyze data to extract insights and support business decisions.</p>
+                            <p><strong>Key Skills:</strong> SQL, Excel, Data Visualization, Statistical Analysis</p>
+                            <p><strong>Avg. Salary:</strong> $70,000 - $90,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Data Scientist</h4>
+                            <p>Apply advanced analytics, ML, and statistical methods to solve complex problems.</p>
+                            <p><strong>Key Skills:</strong> Machine Learning, Python/R, Statistics, Data Modeling</p>
+                            <p><strong>Avg. Salary:</strong> $100,000 - $140,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Machine Learning Engineer</h4>
+                            <p>Build and deploy ML models at scale for production environments.</p>
+                            <p><strong>Key Skills:</strong> Deep Learning, MLOps, Software Engineering, Cloud Services</p>
+                            <p><strong>Avg. Salary:</strong> $120,000 - $160,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfolio Project Ideas</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Beginner Projects</h4>
+                            <ul>
+                                <li>Exploratory data analysis of public datasets (COVID-19, climate data, etc.)</li>
+                                <li>Predict house prices using regression models</li>
+                                <li>Customer segmentation using clustering algorithms</li>
+                                <li>Build a simple recommendation system</li>
+                                <li>Sentiment analysis of product reviews or tweets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Advanced Projects</h4>
+                            <ul>
+                                <li>Image classification or object detection system using CNNs</li>
+                                <li>Natural language processing application (chatbot, text summarizer)</li>
+                                <li>Time series forecasting for stock prices or sales prediction</li>
+                                <li>Fraud detection system for financial transactions</li>
+                                <li>End-to-end ML pipeline with automated retraining and deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Start Your Data Science Journey Today</h2>
+                    <p class="lead mb-5">Learn the skills that will transform data into actionable insights and launch your career in one of the most in-demand fields.</p>
+                    <a href="#" class="btn btn-primary btn-lg px-5">Begin Learning</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'core/includes/footer.html' %}
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
